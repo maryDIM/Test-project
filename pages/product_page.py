@@ -17,7 +17,7 @@ class ProductPage(BasePage):
         alert = self.browser.switch_to.alert
         x = alert.text.split(" ")[2]
         answer = str(math.log(abs((12 * math.sin(float(x))))))
-        print(answer)
+        # print(answer)
         alert.send_keys(answer)
         alert.accept()
         try:
@@ -46,3 +46,9 @@ class ProductPage(BasePage):
     def should_item_in_basket(self):
         self.should_cost_equal()
         self.should_name_equal()
+
+    def should_not_be_success_message(self):
+         assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), "Success message is presented, but should not be"
+
+    def should_success_message_disappeared(self):
+         assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE), "Success message is presented, but should not be"
