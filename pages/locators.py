@@ -13,3 +13,5 @@ class ProductPageLocators(object):
     PRODUCT_PRICE = (By.CSS_SELECTOR, ".product_main .price_color")
     PRODUCT_NAME = (By.CSS_SELECTOR, ".product_main h1")
     BASKET_ADD_BTN = (By.CLASS_NAME, "btn-add-to-basket")
+    SUCCESS_MESSAGE = (By.CSS_SELECTOR, ".alertinner strong")
+
